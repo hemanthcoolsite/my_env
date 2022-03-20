@@ -1,0 +1,40 @@
+<style type="text/css">
+    td {
+        /*font-size: 12px;*/
+        text-align: center;
+        padding: 2px 2px;
+        border: 1px solid #ddd;
+    }
+</style>
+<table>
+	<thead>
+		<tr>
+            <th id="1">S.I</th>
+            <th id="2">Environment Name</th>
+            <th id="3">TA Version</th>
+            <th id="4">OCS Version</th>
+            <th id="5">WSC Version</th>
+            <th id="6">DataBase</th>
+            <th id="7">Host</th>
+            <th id="8">User</th>
+            <th id="9">Password</th>
+        </tr>
+	</thead>
+    <%@count=1%>
+	<tbody>
+        <% @hash.each do |data|%>
+            <tr>
+                <td><%= @count%></td>
+                <td><%= data["env_name"]%></td>
+                <td><%= data["ta_version"]%></td>
+                <td><%= data["ocs_version"]%></td>
+                <td><%= data["wsc_version"]%></td>
+                <td><%= data["db_type"]%></td>
+                <td><%= data["host_name"]%></td>
+                <td><%= data["os_login"]%></td>
+                <td><%= data["os_password"]%></td>
+                <%@count += 1%> 
+            </tr>
+        <%end%>
+	</tbody>
+</table>

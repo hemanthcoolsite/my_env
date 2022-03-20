@@ -1,0 +1,23 @@
+<nav class="navbar navbar-expand-lg navbar-transparent navbar-absolute fixed-top">
+  <div class="container-fluid">
+    <div class="navbar-wrapper">
+        <%= image_tag "logo.png", alt: ""%>
+        <div class="col" id="pdiv">
+            <p id="pid"><span style="font-size:40px;color:red;" id="espan"><%=@count%></span><br/><span>Total Environments</span></p>
+
+        </div>
+      </div>
+    <%= link_to "Environments Dashboard", "/", class:"index-link"%>
+    </div>
+    <div style="position:absolute; left: 1250px;padding-top: 35px;">
+        <%=link_to "Download Report", "/result.csv", download:" Env_Report",class:"atag" %>
+    </div>
+
+    <div class="collapse navbar-collapse justify-content-end">
+      <%= form_tag dash_board_search_path, :method => 'get' do %>
+        <%= text_field_tag :svalue, params[:svalue], class:"searchBar"%>
+        <%= submit_tag "Search",class:"searchBut"%>
+        <% end %>
+    </div>
+  </div>
+</nav>
